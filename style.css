@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.title {
+  width: 100%;
+  height: 40px;
+  background-color: rgba(0,100,0,.3);
+  text-align: center;
+}
+.title h1 {
+  font-size: 2rem;
+}
+
+.msg-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  width: 100%;
+  padding: 1px;
+  height: auto;
+  background-color: rgba(100,0,0,.3);
+}
+.msg {
+  position: relative;
+  margin: 0 1px;
+  height: 200px;
+  width: 100%;
+  transition: .3s ease transform;
+}
+.msg-card {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: .3s ease transform;
+}
+.card-front, .card-back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: rgba(0,200,0,.5);
+  border-radius: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  backface-visibility: hidden;
+}
+.card-front {
+  font-size: 3rem;
+}
+.card-back {
+  font-size: 1rem;
+  transform: rotateY(180deg);
+}
+.msg:hover .msg-card {
+  transform: rotateY(180deg);
+}
